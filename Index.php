@@ -7,6 +7,6 @@
     <title>PRoyectoWeb</title>
 </head>
 <body>
-    hola
+    
 </body>
 </html>

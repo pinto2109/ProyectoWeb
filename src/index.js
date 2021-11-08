@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import Pagina from './pagina';
@@ -8,7 +9,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 ReactDOM.render(
   <BrowserRouter>
+    
     <Switch>
+      <App />
       <Route exact path="/" component={App}/>
       <Route path="/pagina" component={Pagina} />
     </Switch>  

@@ -4,11 +4,8 @@ import {Modal, ModalBody, ModalFooter, ModalHeader} from 'reactstrap';
 import axios from 'axios';
 import './App.css';
 import Barra from './componentes/Barra';
-import Logo from './componentes/Imagen1';
-import Boton from './componentes/Boton';
 
-
-function App() {
+function Pagina() {
   const baseUrl ="http://localhost/ApiFramework/BD/";
   const [data, setData]= useState([]);
   const [modalInsertar, setModalInsertar] = useState(false);
@@ -223,4 +220,4 @@ function App() {
   );
 }
 
-export default App;
+export default Pagina;

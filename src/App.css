@@ -13,16 +13,16 @@
   color: white;
 }
 
-
-
-.fondo, .Imagen{
-  background-color: rgb(172, 24, 24, 100%);
-
+.ImagenU {
+  height: 55px;
 }
 
+.Logo{
+  height: 55px;
+}
 
 .fondo, .Imagen, .boton, .texto{
-  background-color: rgb(176, 20, 29);
+  background-color: rgb(172, 24, 24, 100%);
   padding: 20px;
   font-family: Mulish;
   font-style: italic;

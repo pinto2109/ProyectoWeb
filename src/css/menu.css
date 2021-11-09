@@ -1,0 +1,48 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-header {
+    background-color: rgb(172, 24, 24);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  
+  
+  .fondo, .Imagen{
+    background-color: rgb(172, 24, 24, 100%);
+  
+  }
+  
+  
+  .fondo, .Imagen, .boton, .texto{
+    background-color: rgb(172, 24, 24);
+    padding: 20px;
+    font-family: Mulish;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+  
+    color: #FFFFFF;
+  }  
+  
+  .texto{
+    background-color: rgb(172, 24, 24, 100%);
+    padding: 20px;
+    font-family: Mulish;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+  
+    color: #FFFFFF;
+  }

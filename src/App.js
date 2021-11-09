@@ -1,14 +1,13 @@
 import './App.css';
-
-import react, { useState} from 'react';
-
+import react, { Component, useState} from 'react';
 import Login from './componentes/Login';
 import Menu from './componentes/Menu';
+import Pagina from './pagina';
+import Cookies from 'universal-cookie';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import Barra from './componentes/Barra';
-import Logo from './componentes/Imagen1';
-import {Link } from "react-router-dom";
-import Boton from './componentes/Boton';
+const cookie = new Cookies();
 
 function App() {
   const [conectado, setConectado]= useState(false);
@@ -17,7 +16,20 @@ function App() {
   }
 
   return (
-    conectado ? <Menu /> : <Login acceder ={acceder}/>
+    cookie.get("usuario") ? <Menu /> : <Login acceder ={acceder}/> 
+
+      /*<BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={App}/>
+          <Route exact path="/pagina/new" component={Pagina} />
+        </Switch>  
+      </BrowserRouter>*/
+
+
+
+
+
+
 
     // <div className="App">
     //   <Barra></Barra>

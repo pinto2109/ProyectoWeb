@@ -8,14 +8,9 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 ReactDOM.render(
-  <BrowserRouter>
-    
-    <Switch>
-      <App />
-      <Route exact path="/" component={App}/>
-      <Route path="/pagina" component={Pagina} />
-    </Switch>  
-  </BrowserRouter>,
+  <React.StrictMode>
+      <App />  
+  </React.StrictMode>,
   document.getElementById('root')
 );
 

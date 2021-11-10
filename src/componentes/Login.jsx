@@ -1,16 +1,16 @@
-import react, {useRef, useState} from 'react';
+import react, { useRef, useState } from 'react';
 import '../css/login.css';
 import Cookies from 'universal-cookie';
 
 const cookie = new Cookies();
 
-const URL_LOGIN = "http://localhost/ProyectoWeb/src/ws-login/login.php";
+const URL_LOGIN = "http://localhost/00 Universidad/Electiva Profesional V (programacion en ambientes web)/Topin/ProyectoWeb/src/ws-login/login.php";
 
-const enviarData = async(url, data)=>{
-const resp = await fetch(url, {
+const enviarData = async (url, data) => {
+    const resp = await fetch(url, {
         method: 'POST',
         body: JSON.stringify(data),
-        headers: {'Content-Type': 'application/json'}
+        headers: { 'Content-Type': 'application/json' }
     })
     // console.log(resp);
     const json = await resp.json();
@@ -20,7 +20,12 @@ const resp = await fetch(url, {
 }
 
 
-export default function Login (props) {
+export default function Login(props) {
+    const [conectado, setConectado] = useState(false);
+    const acceder = (estado) => {
+        setConectado(estado)
+    }
+
     const [error, setError] = useState(null);
 
     const [espera, setEspera] = useState(null);
@@ -29,7 +34,7 @@ export default function Login (props) {
 
     const refClave = useRef(null);
 
-    const handleLogin= async()=>{
+    const handleLogin = async () => {
 
         setEspera(true);
 
@@ -39,34 +44,34 @@ export default function Login (props) {
         };
         console.log(data);
 
-        cookie.set("usuario",data.usuario)
-        cookie.set("clave",data.clave)
-        
+        cookie.set("usuario", data.usuario)
+        cookie.set("clave", data.clave)
+
         console.log(cookie.get("usuario"));
 
-        const respuestaJson = await enviarData( URL_LOGIN, data);
+        const respuestaJson = await enviarData(URL_LOGIN, data);
         console.log("respuesta desde el evento", respuestaJson);
 
-        props.acceder(respuestaJson.conectado)
-        
+        acceder(respuestaJson.conectado)
+
         setError(respuestaJson.error)
         setEspera(false);
     }
 
-    
 
 
-    return(
+
+    return (
         <div className="login">
-            
+
             <div className="row">
                 <div className="col-sm-4 offset-4 mt-5">
                     <div className="card pt-5">
                         <div className="card-header text-center">
-                            <h3> 🍰 Iniciar sesion </h3> 
+                            <h3> 🍰 Iniciar sesion </h3>
                         </div>
                         <div className="card-body">
-                                        
+
                             <div className="input-group mb-3">
                                 <span className="input-group-text" id="basic-addon1">📧</span>
                                 <input type="email" ref={refUsuario} className="form-control" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1" />
@@ -76,16 +81,16 @@ export default function Login (props) {
                                 <span className="input-group-text" id="basic-addon2">🔒</span>
                                 <input type="password" ref={refClave} className="form-control" placeholder="Contraseña" aria-label="clave" aria-describedby="basic-addon2" />
                             </div>
-                            
+
                             {
-                                error &&    
+                                error &&
                                 <div className="alert alert-danger">
                                     {error}
                                 </div>
                             }
 
                             <button onClick={handleLogin} disabled={espera} className="btn btn-info btn-lg btn-block" > Acceder </button>
-                            
+
                             <div className="card-footer">
                                 <span>¿No tienes un ususuario?</span><a href="http://">Crear Usuario</a>
                             </div>

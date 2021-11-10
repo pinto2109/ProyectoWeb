@@ -2,9 +2,7 @@ import './App.css';
 
 import react, { useState} from 'react';
 
-import Login from './componentes/Login';
-import Menu from './componentes/Menu';
-import Pagina from './pagina';
+
 
 import Cookies from 'universal-cookie';
 
@@ -18,7 +16,12 @@ function App() {
   }
 
   return (
-    cookie.get("usuario") ? <Menu /> : <Login acceder={acceder} />
+
+    conectado ? 
+      window.location.href = `http://localhost:3000/Menu` : 
+      window.location.href = `http://localhost:3000/Login`
+    
+     
     
 
     // <div className="App">
@@ -33,7 +36,7 @@ function App() {
     //     </body>
     //   </header>
     // </div>
-  );
+  )
 }
 
 export default App;

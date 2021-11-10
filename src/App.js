@@ -17,7 +17,7 @@ function App() {
 
   return (
 
-    conectado ? 
+    cookie.get("usuario") ? 
       window.location.href = `http://localhost:3000/Menu` : 
       window.location.href = `http://localhost:3000/Login`
     

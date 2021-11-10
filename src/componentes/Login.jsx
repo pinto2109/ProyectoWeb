@@ -4,7 +4,7 @@ import Cookies from 'universal-cookie';
 
 const cookie = new Cookies();
 
-const URL_LOGIN = "http://localhost/00 Universidad/Electiva Profesional V (programacion en ambientes web)/Topin/ProyectoWeb/src/ws-login/login.php";
+const URL_LOGIN = "http://localhost/Topin/ProyectoWeb/src/ws-login/login.php";
 
 const enviarData = async (url, data) => {
     const resp = await fetch(url, {
@@ -90,6 +90,7 @@ export default function Login(props) {
                             }
 
                             <button onClick={handleLogin} disabled={espera} className="btn btn-info btn-lg btn-block" > Acceder </button>
+                            {cookie.get("usuario") ? window.location.href = `http://localhost:3000/Menu` : ""}
 
                             <div className="card-footer">
                                 <span>¿No tienes un ususuario?</span><a href="http://">Crear Usuario</a>

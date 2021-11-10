@@ -12,8 +12,9 @@ ReactDOM.render(
     
     <Switch>
       <App />
+      <Pagina />
       <Route exact path="/" component={App}/>
-      <Route path="/pagina" component={Pagina} />
+      <Route path="./pagina" component={Pagina} />
     </Switch>  
   </BrowserRouter>,
   document.getElementById('root')

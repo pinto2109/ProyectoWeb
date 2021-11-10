@@ -1,5 +1,8 @@
 import react, {useRef, useState} from 'react';
 import '../css/login.css';
+import Cookies from 'universal-cookie';
+
+const cookie = new Cookies();
 
 const URL_LOGIN = "http://localhost/ProyectoWeb/src/ws-login/login.php";
 
@@ -35,14 +38,22 @@ export default function Login (props) {
             "clave": refClave.current.value
         };
         console.log(data);
+
+        cookie.set("usuario",data.usuario)
+        cookie.set("clave",data.clave)
+        
+        console.log(cookie.get("usuario"));
+
         const respuestaJson = await enviarData( URL_LOGIN, data);
         console.log("respuesta desde el evento", respuestaJson);
 
         props.acceder(respuestaJson.conectado)
-
+        
         setError(respuestaJson.error)
         setEspera(false);
     }
+
+    
 
 
     return(

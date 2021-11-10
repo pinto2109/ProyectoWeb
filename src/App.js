@@ -4,11 +4,12 @@ import react, { useState} from 'react';
 
 import Login from './componentes/Login';
 import Menu from './componentes/Menu';
+import Pagina from './pagina';
 
-import Barra from './componentes/Barra';
-import Logo from './componentes/Imagen1';
-import {Link } from "react-router-dom";
-import Boton from './componentes/Boton';
+import Cookies from 'universal-cookie';
+
+const cookie = new Cookies();
+
 
 function App() {
   const [conectado, setConectado]= useState(false);
@@ -17,7 +18,8 @@ function App() {
   }
 
   return (
-    conectado ? <Menu /> : <Login acceder ={acceder}/>
+    cookie.get("usuario") ? <Menu /> : <Login acceder={acceder} />
+    
 
     // <div className="App">
     //   <Barra></Barra>

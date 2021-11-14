@@ -4,6 +4,8 @@ import './css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import Pagina from './pagina';
+import Login from './componentes/Login.jsx';
+import Menu from './componentes/Menu.jsx';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -11,10 +13,10 @@ ReactDOM.render(
   <BrowserRouter>
     
     <Switch>
-      <App />
-      <Pagina />
       <Route exact path="/" component={App}/>
-      <Route path="./pagina" component={Pagina} />
+      <Route exact path="/pagina" component={Pagina} />
+      <Route exact path="/Login" component={Login} />
+      <Route exact path="/Menu" component={Menu} />
     </Switch>  
   </BrowserRouter>,
   document.getElementById('root')

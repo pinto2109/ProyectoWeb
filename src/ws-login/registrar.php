@@ -2,10 +2,10 @@
 	include "conectar.php";
     $conn = conectarDB();
 	
-	$password= "456";
+	$password= "123";
 	
 	
-	$usuario= "usuario1";
+	$usuario= "admin";
 	$nombre= "pepito";
 	$apellidos= "Jiménez Blanco";	
 	$clave = password_hash($password, PASSWORD_DEFAULT);

@@ -6,6 +6,7 @@ import App from './App';
 import Pagina from './pagina';
 import Login from './componentes/Login.jsx';
 import Menu from './componentes/Menu.jsx';
+import CrearUsuario from './componentes/CrearUsuario';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -17,6 +18,9 @@ ReactDOM.render(
       <Route exact path="/pagina" component={Pagina} />
       <Route exact path="/Login" component={Login} />
       <Route exact path="/Menu" component={Menu} />
+      <Route exact path="/CrearUsuario" component={CrearUsuario} />
+
+
     </Switch>  
   </BrowserRouter>,
   document.getElementById('root')

@@ -5,7 +5,7 @@
 	$password= "123";
 	
 	
-	$usuario= "admin";
+	$usuario= "pepito123";
 	$nombre= "pepito";
 	$apellidos= "Jiménez Blanco";	
 	$clave = password_hash($password, PASSWORD_DEFAULT);

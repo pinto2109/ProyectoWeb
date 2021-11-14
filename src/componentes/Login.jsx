@@ -1,5 +1,7 @@
 import react, { useRef, useState } from 'react';
+
 import '../css/login.css';
+import CrearUsuario from "./CrearUsuario";
 import Cookies from 'universal-cookie';
 
 const cookie = new Cookies();
@@ -45,7 +47,7 @@ export default function Login(props) {
         console.log(data);
 
         cookie.set("usuario", data.usuario)
-        cookie.set("clave", data.clave)
+        // cookie.set("clave", data.clave)
 
         console.log(cookie.get("usuario"));
 
@@ -93,7 +95,7 @@ export default function Login(props) {
                             {cookie.get("usuario") ? window.location.href = `http://localhost:3000/Menu` : ""}
 
                             <div className="card-footer">
-                                <span>¿No tienes un ususuario?</span><a href="">Crear Usuario</a>
+                                <span>¿No tienes un usuario?</span><a href="/CrearUsuario">Crear Usuario</a>
                             </div>
 
 

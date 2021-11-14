@@ -47,6 +47,7 @@ export default function Login (props) {
         const respuestaJson = await enviarData( URL_LOGIN, data);
         console.log("respuesta desde el evento", respuestaJson);
 
+        
         props.acceder(respuestaJson.conectado)
         
         setError(respuestaJson.error)
@@ -87,7 +88,7 @@ export default function Login (props) {
                             <button onClick={handleLogin} disabled={espera} className="btn btn-info btn-lg btn-block" > Acceder </button>
                             
                             <div className="card-footer">
-                                <span>¿No tienes un ususuario?</span><a href="http://">Crear Usuario</a>
+                                <span>¿No tienes un ususuario?</span><a href="">Crear Usuario</a>
                             </div>
 
 

@@ -4,7 +4,7 @@ import Cookies from 'universal-cookie';
 
 const cookie = new Cookies();
 
-const URL_LOGIN = "http://localhost/Topin/ProyectoWeb/src/ws-login/login.php";
+const URL_LOGIN = "http://localhost/ProyectoWeb/src/ws-login/login.php";
 
 const enviarData = async (url, data) => {
     const resp = await fetch(url, {

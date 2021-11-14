@@ -17,7 +17,7 @@ export default function Menu(params){
 
     return ( 
         <>
-        {!cookie.get("usuario") ? window.location.href = `http://localhost:3000/Login`  : ""}
+        {!cookie.get("usuario") ? window.location.href = 'http://localhost:3000/Login'  : ""}
         
         
 

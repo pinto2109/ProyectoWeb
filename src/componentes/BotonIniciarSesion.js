@@ -1,9 +1,18 @@
 import React, { Component } from 'react'
+import {Link } from "react-router-dom";
+import {Button} from 'reactstrap';
 
 class Boton extends Component {
     render() {
         return ( 
-            <input className="btn btn-danger" type="submit" value="Iniciar sesión"></input>
+            <div className="pedido">
+                <Link to ="./Menu" >
+                    <Button className="pedido" color ="light" size ="lg">
+                        Volver a la pagina inicial
+                    </Button>
+                </Link>
+            </div>
+            
         );
 
     }

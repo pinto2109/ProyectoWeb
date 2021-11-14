@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css';
-import Boton from './Boton';
-import Logo from './user';
+import User from './user';
 import Logo1 from './LogoP';
 
 class Barra extends Component {
@@ -10,12 +9,12 @@ class Barra extends Component {
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <Logo1></Logo1>
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">Usuario</a>
-                    <a className="navbar-brand" >Mi Dulce Andre</a>
-                    <Boton></Boton>
+                    <a className="navbar-brand" href="#">Administrar</a>
+                    <p className="titulo">Mi Dulce Andre</p>
+                    <a className="navbar-brand" >Nombre de usuario</a>
                 </div>
                 <div className="logo">
-                    <Logo></Logo>
+                    <User></User>
                 </div>
                 
             </nav>

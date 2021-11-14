@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css';
-import Andre from '../images/user.svg';
+import Andre from '../img/user.svg';
 
 class ImagenA extends Component {
     render() {

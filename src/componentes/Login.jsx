@@ -95,7 +95,7 @@ export default function Login(props) {
                             {cookie.get("usuario") ? window.location.href = `http://localhost:3000/MenuPrincipal` : ""}
 
                             <div className="card-footer">
-                                <span>¿No tienes un usuario?</span><a href="/CrearUsuario">Crear Usuario</a>
+                                <span>¿No tienes un usuario?</span><a href="http://localhost/ProyectoWeb/src/ws-login/registrar.php?">Crear Usuario</a>
                             </div>
 
 

@@ -7,7 +7,7 @@ import Pagina from './pagina';
 import Login from './componentes/Login.jsx';
 import MenuAdmin from './componentes/MenuAdmin.jsx';
 import MenuUsuario from './componentes/MenuUsuario';
-import CrearUsuario from './componentes/CrearUsuario';
+import CrearUsuario from './ws-login/registrar.php';
 import Postres from './componentes/PaginaPostres';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -21,7 +21,6 @@ ReactDOM.render(
       <Route exact path="/Login" component={Login} />
       <Route exact path="/MenuAdmin" component={MenuAdmin} />
       <Route exact path="/MenuPrincipal" component={MenuUsuario}/>
-      <Route exact path="/CrearUsuario" component={CrearUsuario} />
       <Route exact path="/Postres" component={Postres} />
 
 

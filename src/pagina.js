@@ -4,7 +4,8 @@ import {Modal, ModalBody, ModalFooter, ModalHeader, Table} from 'reactstrap';
 import axios from 'axios';
 import './App.css';
 import Volver from './componentes/BotonVolverAdmin';
-import Barra from './componentes/Barra';
+import BarraAdmin from './componentes/BarraAdmin';
+
 
 function Pagina() {
   const baseUrl ="http://localhost/ApiFramework/BD/";
@@ -118,7 +119,7 @@ function Pagina() {
   
   return (
     <div className="App">
-      <Barra></Barra>
+      <BarraAdmin></BarraAdmin>
       <header className="App-header">
         <h1>
           <br></br>

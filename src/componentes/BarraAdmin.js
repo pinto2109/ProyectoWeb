@@ -25,10 +25,10 @@ function Barra() {
                     <p className="titulo">Mi Dulce Andre</p>
                     <Dropdown isOpen={dropdown} toggle={abrirCerrarDropdown}>
                     <DropdownToggle>
-                        <a className="navbar-brand">{cookie.get("usuario")}</a>
+                        <a className="navbar-brand">Admin</a>
                     </DropdownToggle>
                     <DropdownMenu>
-                        <DropdownItem>Cerrar Sesión</DropdownItem>
+                        <DropdownItem><a href="/Login">Cerrar Sesión</a></DropdownItem>
                     </DropdownMenu>
                     </Dropdown>
                 </div>

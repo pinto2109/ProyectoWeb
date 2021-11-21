@@ -6,7 +6,7 @@ class Boton extends Component {
     render() {
         return ( 
             <div className="pedido">
-                <Link to ="./Menu" >
+                <Link to ="./MenuAdmin" >
                     <Button className="pedido" color ="light" size ="lg">
                         Volver a la pagina inicial
                     </Button>

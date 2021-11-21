@@ -92,7 +92,7 @@ export default function Login(props) {
                             }
 
                             <button onClick={handleLogin} disabled={espera} className="btn btn-info btn-lg btn-block" > Acceder </button>
-                            {cookie.get("usuario") ? window.location.href = `http://localhost:3000/Menu` : ""}
+                            {cookie.get("usuario") ? window.location.href = `http://localhost:3000/MenuPrincipal` : ""}
 
                             <div className="card-footer">
                                 <span>¿No tienes un usuario?</span><a href="/CrearUsuario">Crear Usuario</a>

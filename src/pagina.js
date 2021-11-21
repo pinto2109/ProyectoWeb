@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Modal, ModalBody, ModalFooter, ModalHeader, Table} from 'reactstrap';
 import axios from 'axios';
 import './App.css';
-import Volver from './componentes/BotonIniciarSesion';
+import Volver from './componentes/BotonVolverAdmin';
 import Barra from './componentes/Barra';
 
 function Pagina() {

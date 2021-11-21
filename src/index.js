@@ -5,8 +5,10 @@ import './index.css';
 import App from './App';
 import Pagina from './pagina';
 import Login from './componentes/Login.jsx';
-import Menu from './componentes/Menu.jsx';
+import MenuAdmin from './componentes/MenuAdmin.jsx';
+import MenuUsuario from './componentes/MenuUsuario';
 import CrearUsuario from './componentes/CrearUsuario';
+import Postres from './componentes/PaginaPostres';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -17,8 +19,10 @@ ReactDOM.render(
       <Route exact path="/" component={App}/>
       <Route exact path="/pagina" component={Pagina} />
       <Route exact path="/Login" component={Login} />
-      <Route exact path="/Menu" component={Menu} />
+      <Route exact path="/MenuAdmin" component={MenuAdmin} />
+      <Route exact path="/MenuPrincipal" component={MenuUsuario}/>
       <Route exact path="/CrearUsuario" component={CrearUsuario} />
+      <Route exact path="/Postres" component={Postres} />
 
 
     </Switch>  

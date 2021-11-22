@@ -66,7 +66,7 @@ export default function Login(props) {
     return (
         <div className="login">
 
-            <div className="row">
+            
                 <div className="col-sm-4 offset-4 mt-5">
                     <div className="card pt-5">
                         <div className="card-header text-center">
@@ -104,6 +104,5 @@ export default function Login(props) {
                 </div>
             </div>
 
-        </div>
     );
 }

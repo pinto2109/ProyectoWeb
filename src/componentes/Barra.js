@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react'
 import '../App.css';
 import User from './user';
 import Logo1 from './LogoP';
+import '../css/Crear.css';
 import Cookies from 'universal-cookie';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from 'reactstrap';
@@ -17,6 +18,10 @@ function Barra() {
             setDropdown(!dropdown);
         }
 
+        const cerrar=()=>{
+            document.cookie = "usuario=; max-age=0"
+        }
+
         return ( 
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <Logo1></Logo1>
@@ -28,7 +33,11 @@ function Barra() {
                         <a className="navbar-brand">{cookie.get("usuario")}</a>
                     </DropdownToggle>
                     <DropdownMenu>
-                        <DropdownItem>Cerrar Sesión</DropdownItem>
+                        <DropdownItem>
+                            <>
+                           <a className="btn-volver" href="/Login" onClick={cerrar}>Cerrar Sesion</a>
+                            </>
+                        </DropdownItem>
                     </DropdownMenu>
                     </Dropdown>
                 </div>

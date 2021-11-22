@@ -4,12 +4,14 @@ import React, { Component } from 'react'
 import BotonUsuario from "./BotonUsuario";
 import Barra from './Barra';
 import Logo from './Imagen1';
+import Slide from './Slide';
 
 import '../css/menu.css';
 
 import Cookies from 'universal-cookie';
 
 const cookie = new Cookies();
+
 
 export default function Menu(params){
 

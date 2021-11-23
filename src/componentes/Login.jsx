@@ -1,10 +1,12 @@
 import react, { useRef, useState } from 'react';
+
 import '../css/login.css';
+import CrearUsuario from "./CrearUsuario";
 import Cookies from 'universal-cookie';
 
 const cookie = new Cookies();
 
-const URL_LOGIN = "http://localhost/Topin/ProyectoWeb/src/ws-login/login.php";
+const URL_LOGIN = "http://localhost/ProyectoWeb/src/ws-login/login.php";
 
 const enviarData = async (url, data) => {
     const resp = await fetch(url, {
@@ -45,7 +47,7 @@ export default function Login(props) {
         console.log(data);
 
         cookie.set("usuario", data.usuario)
-        cookie.set("clave", data.clave)
+        // cookie.set("clave", data.clave)
 
         console.log(cookie.get("usuario"));
 
@@ -64,7 +66,7 @@ export default function Login(props) {
     return (
         <div className="login">
 
-            <div className="row">
+            
                 <div className="col-sm-4 offset-4 mt-5">
                     <div className="card pt-5">
                         <div className="card-header text-center">
@@ -90,10 +92,10 @@ export default function Login(props) {
                             }
 
                             <button onClick={handleLogin} disabled={espera} className="btn btn-info btn-lg btn-block" > Acceder </button>
-                            {cookie.get("usuario") ? window.location.href = `http://localhost:3000/Menu` : ""}
+                            {cookie.get("usuario") ? window.location.href = `http://localhost:3000/MenuPrincipal` : ""}
 
                             <div className="card-footer">
-                                <span>¿No tienes un ususuario?</span><a href="http://">Crear Usuario</a>
+                                <span>¿No tienes un usuario?</span><a href="http://localhost/ProyectoWeb/src/ws-login/registrar.php?">Crear Usuario</a>
                             </div>
 
 
@@ -102,6 +104,5 @@ export default function Login(props) {
                 </div>
             </div>
 
-        </div>
     );
 }

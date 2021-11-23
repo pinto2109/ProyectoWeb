@@ -5,8 +5,8 @@ class Boton extends Component {
     render() {
         return ( 
             <div className="boton">
-                <Link to ="../pagina" target="_blank">
-                <button type="button" class="btn btn-light" >Registrar productos</button>
+                <Link to ="/Postres" >
+                <button type="button" class="btn btn-light" >Ver Todos Nuestros Postres</button>
                 </Link>
             </div>
             

@@ -1,0 +1,104 @@
+diff a/src/pagina.js b/src/pagina.js	(rejected hunks)
+@@ -123,101 +123,101 @@
+       <br /><br />
+       <table className="Table table-striped">
+         <thead>
+           <tr>
+             <th> Id_Producto | </th>
+             <th> NomProducto | </th>
+             <th> PrecioProducto | </th>
+             <th>StockProducto | </th>
+             {/* <th>Foto | </th> */}
+           </tr>
+         </thead>
+         
+         <tbody>
+           {data.map(framework=>(
+             <tr key={framework.Id_Producto}>
+               <td>{framework.Id_Producto}</td>
+               <td>{framework.NomProducto}</td>
+               <td>$ {framework.PrecioProducto}</td>
+               <td>{framework.StockProducto}</td>
+               {/* <td>{framework.Foto}</td> */}
+               <td>
+                 <button className="btn btn-primary" onClick={()=>seleccionarFramework(framework, "Editar")}>Editar</button> {"  "}
+                 <button className="btn btn-danger" onClick={()=>seleccionarFramework(framework, "Eliminar")}>Eliminar</button>
+               </td>
+             </tr>
+           ))}
+         </tbody>
+       </table>
+ 
+       <Modal isOpen={modalInsertar}>
+         <ModalHeader>Insertar Nuevo Producto</ModalHeader>
+         <ModalBody>
+           <div className="form-group">
+             <label>Nombre del Producto: </label>
+             <br />
+             <input type="text" className="form-control" name="NomProducto" onChange={handleChange}/>
+             <br />
+             <label>Precio del Producto: </label>
+             <br />
+             <input type="text" className="form-control" name="PrecioProducto" onChange={handleChange}/>
+             <br />
+             <label>cantidad del Producto: </label>
+             <br />
+             <input type="text" className="form-control" name="StockProducto" onChange={handleChange}/>
+             <br />
+             {/* <label>Foto del Producto: </label>
+             <br />
+             <input type="text" className="form-control" name="Foto"/>
+             <br /> */}
+           </div>
+         </ModalBody>
+         <ModalFooter>
+           <button className="btn btn-primary" onClick={()=>peticionPost()}>Insertar</button> {"  "}
+           <button className="btn btn-danger" onClick={()=>abrirCerrarModalInsertar()}>Cancelar</button>
+         </ModalFooter>
+       </Modal>
+ 
+       <Modal isOpen={modalEditar}>
+         <ModalHeader>Editar Producto</ModalHeader>
+         <ModalBody>
+           <div className="form-group">
+             <label>Nombre del Producto: </label>
+             <br />
+             <input type="text" className="form-control" name="NomProducto" onChange={handleChange} value={frameworkSeleccionado && frameworkSeleccionado.NomProducto}/>
+             <br />
+             <label>Precio del Producto: </label>
+             <br />
+             <input type="text" className="form-control" name="PrecioProducto" onChange={handleChange} value={frameworkSeleccionado && frameworkSeleccionado.PrecioProducto}/>
+             <br />
+             <label>cantidad del Producto: </label>
+             <br />
+             <input type="text" className="form-control" name="StockProducto" onChange={handleChange} value={frameworkSeleccionado && frameworkSeleccionado.StockProducto}/>
+             <br />
+             {/* <label>Foto del Producto: </label>
+             <br />
+             <input type="text" className="form-control" name="Foto"/>
+             <br /> */}
+           </div>
+         </ModalBody>
+         <ModalFooter>
+           <button className="btn btn-primary" onClick={()=>peticionPut()}>Editar</button> {"  "}
+           <button className="btn btn-danger" onClick={()=>abrirCerrarModalEditar()}>Cancelar</button>
+         </ModalFooter>
+       </Modal>
+ 
+       <Modal isOpen={modalEliminar}>
+         <ModalBody>
+           ¿Esta seguro de eliminar {frameworkSeleccionado && frameworkSeleccionado.NomProducto}?
+         </ModalBody>
+         <ModalFooter>
+           <button className="btn btn-danger" onClick={()=>peticionDelete()}> Si </button>
+           <button className="btn btn-secondary" onClick={()=>abrirCerrarModalEliminar()}> No </button>
+         </ModalFooter>
+       </Modal>
+ 
+ 
+     </div>
+   );
+ }
+ 
+-export default App;
++export default Pagina;

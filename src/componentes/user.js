@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import '../App.css';
-import Andre from '../img/logo.svg';
+import Andre from '../img/user.svg';
 
 class ImagenA extends Component {
     render() {
         return ( 
-            <div className="Imagen">
-                <img src={Andre}></img>
+            <div>
+                <img className="ImagenU" src={Andre}></img>
             </div>
         );
 
@@ -14,5 +14,3 @@ class ImagenA extends Component {
 }
 
 export default ImagenA;
-
-

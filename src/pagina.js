@@ -1,14 +1,13 @@
 import react, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Modal, ModalBody, ModalFooter, ModalHeader} from 'reactstrap';
+import {Modal, ModalBody, ModalFooter, ModalHeader, Table} from 'reactstrap';
 import axios from 'axios';
 import './App.css';
-import Barra from './componentes/Barra';
-import Logo from './componentes/Imagen1';
-import Boton from './componentes/Boton';
+import Volver from './componentes/BotonVolverAdmin';
+import BarraAdmin from './componentes/BarraAdmin';
 
 
-function App() {
+function Pagina() {
   const baseUrl ="http://localhost/ApiFramework/BD/";
   const [data, setData]= useState([]);
   const [modalInsertar, setModalInsertar] = useState(false);
@@ -120,37 +119,48 @@ function App() {
   
   return (
     <div className="App">
-      <Barra></Barra>
-      <br />
-      <button className="btn btn-success" onClick={()=>abrirCerrarModalInsertar()}>Insertar</button>
-      <br /><br />
-      <table className="Table table-striped">
-        <thead>
-          <tr>
-            <th> Id_Producto | </th>
-            <th> NomProducto | </th>
-            <th> PrecioProducto | </th>
-            <th>StockProducto | </th>
-            {/* <th>Foto | </th> */}
-          </tr>
-        </thead>
-        
-        <tbody>
-          {data.map(framework=>(
-            <tr key={framework.Id_Producto}>
-              <td>{framework.Id_Producto}</td>
-              <td>{framework.NomProducto}</td>
-              <td>$ {framework.PrecioProducto}</td>
-              <td>{framework.StockProducto}</td>
-              {/* <td>{framework.Foto}</td> */}
-              <td>
-                <button className="btn btn-primary" onClick={()=>seleccionarFramework(framework, "Editar")}>Editar</button> {"  "}
-                <button className="btn btn-danger" onClick={()=>seleccionarFramework(framework, "Eliminar")}>Eliminar</button>
-              </td>
+      <BarraAdmin></BarraAdmin>
+      <header className="App-header">
+        <h1>
+          <br></br>
+          De clic al boton para registrar un producto
+          <br />
+          <button className="btn btn-success" onClick={()=>abrirCerrarModalInsertar()}>Insertar</button>
+          <br />
+          <br></br>
+          
+          Volver a la pagina inicial
+          <Volver></Volver>
+        </h1>
+
+        <Table dark className="Table table-striped">
+          <thead>
+            <tr>
+              <th> Id_Producto  </th>
+              <th> Nombre del Producto </th>
+              <th> Precio del Producto </th>
+              <th>Stock del Producto </th>
+              <th>Opciones </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+        
+          <tbody>
+            {data.map(framework=>(
+              <tr key={framework.Id_Producto}>
+                <td>{framework.Id_Producto}</td>
+                <td>{framework.NomProducto}</td>
+                <td>$ {framework.PrecioProducto}</td>
+                <td>{framework.StockProducto}</td>
+                {/* <td>{framework.Foto}</td> */}
+                <td>
+                  <button className="btn btn-primary" onClick={()=>seleccionarFramework(framework, "Editar")}>Editar</button> {"  "}
+                  <button className="btn btn-danger" onClick={()=>seleccionarFramework(framework, "Eliminar")}>Eliminar</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </header>
 
       <Modal isOpen={modalInsertar}>
         <ModalHeader>Insertar Nuevo Producto</ModalHeader>
@@ -223,4 +233,4 @@ function App() {
   );
 }
 
-export default App;
+export default Pagina;
